@@ -1,14 +1,19 @@
 import React from 'react'
 import Button from './Button.js'
+import {useState} from 'react'
 import {generateHeights, shuffleArray, updateView, finishSortStatus} from '../HelperFunctions.js'
 import {bubbleSort} from '../algorithms/BubbleSort.js'
 import {insertionSort} from '../algorithms/InsertionSort.js'
 import {selectionSort} from '../algorithms/SelectionSort.js'
 import {mergeSort} from '../algorithms/MergeSort.js'
 import {quickSort} from '../algorithms/QuickSort.js'
+import {heapSort} from '../algorithms/HeapSort.js'
+
 let timeouts = [];
-const ControlPanel = ({sortInProgress, setSortInProgress, pxHeightList, setPxHeightList}) => {
-    
+const ControlPanel = ({pxHeightList, setPxHeightList}) => {
+    const [sortInProgress, setSortInProgress] = useState(false);
+    const [sorted, setSorted] = useState(true);
+
     const updateView = (delayMultiplier, inherentDelayFactor, array) => {
         timeouts.push(setTimeout((array) => {
             setPxHeightList(array);
@@ -22,27 +27,31 @@ const ControlPanel = ({sortInProgress, setSortInProgress, pxHeightList, setPxHei
     }
 
     const shuffleAnon = () => {
-        shuffleArray(sortInProgress, pxHeightList, setPxHeightList);
+        shuffleArray(sortInProgress, pxHeightList, setPxHeightList, setSorted);
     }
 
     const bubbleSortAnon = () => {
-        bubbleSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus);
+        bubbleSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
     }
 
     const insertionSortAnon = () => {
-        insertionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus);
+        insertionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
     }
 
     const selectionSortAnon = () => {
-        selectionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus);
+        selectionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
     }
 
     const mergeSortAnon = () => {
-        mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus);
+        mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
     }
 
     const quickSortAnon = () => {
-        quickSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus);
+        quickSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
+    }
+
+    const heapSortAnon = () => {
+        heapSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
     }
 
     const endAnimation = () => {
@@ -54,6 +63,7 @@ const ControlPanel = ({sortInProgress, setSortInProgress, pxHeightList, setPxHei
             //update view
             updateView(0, 0, generateHeights());
             setSortInProgress(false);
+            setSorted(true);
         }
     }
   
@@ -63,11 +73,12 @@ const ControlPanel = ({sortInProgress, setSortInProgress, pxHeightList, setPxHei
             <div id = "buttonControls">
                 <Button clickable = {!sortInProgress} clickFunction = {shuffleAnon} text = "Shuffle"/>
                 <Button clickable = {sortInProgress} clickFunction = {endAnimation} text = "End Animation" />
-                <Button clickable = {!sortInProgress} clickFunction = {bubbleSortAnon} text = "Bubble Sort" />
-                <Button clickable = {!sortInProgress} clickFunction = {insertionSortAnon} text = "Insertion Sort" />
-                <Button clickable = {!sortInProgress} clickFunction = {selectionSortAnon} text = "Selection Sort" />
-                <Button clickable = {!sortInProgress} clickFunction = {mergeSortAnon} text = "Merge Sort" />
-                <Button clickable = {!sortInProgress} clickFunction = {quickSortAnon} text = "Quick Sort" /> 
+                <Button clickable = {!sortInProgress && !sorted} clickFunction = {bubbleSortAnon} text = "Bubble Sort" />
+                <Button clickable = {!sortInProgress && !sorted} clickFunction = {insertionSortAnon} text = "Insertion Sort" />
+                <Button clickable = {!sortInProgress && !sorted} clickFunction = {selectionSortAnon} text = "Selection Sort" />
+                <Button clickable = {!sortInProgress && !sorted} clickFunction = {mergeSortAnon} text = "Merge Sort" />
+                <Button clickable = {!sortInProgress && !sorted} clickFunction = {quickSortAnon} text = "Quick Sort" /> 
+                <Button clickable = {!sortInProgress && !sorted} clickFunction = {heapSortAnon} text = "Heap Sort" /> 
             </div>
         </div>
     )

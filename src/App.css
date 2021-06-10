@@ -14,7 +14,6 @@ h1 {
   color: white;
   font-size: 60px;
   text-align: center;
-  margin-bottom: 0px;
 }
 
 #controlPanel {
@@ -47,6 +46,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 5%;
 }
 
 button {

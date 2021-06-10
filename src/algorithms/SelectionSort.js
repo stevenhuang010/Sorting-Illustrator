@@ -1,6 +1,6 @@
 import {swapModel} from '../HelperFunctions.js'
 
-export function selectionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus) {
+export function selectionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted) {
     if (!sortInProgress) {
         setSortInProgress(true);
         timeouts.length = 0;
@@ -21,6 +21,7 @@ export function selectionSort(timeouts, sortInProgress, setSortInProgress, pxHei
 
             
         }
+        setSorted(true);
         finishSortStatus(delayMultiplier, 100);
     }
 }

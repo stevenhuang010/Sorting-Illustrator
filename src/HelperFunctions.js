@@ -12,8 +12,9 @@ export function swapModel(i, j, array) {
   [array[i], array[j]] = [array[j], array[i]];
 }
 
-export function shuffleArray(sortInProgress, pxHeightList, setPxHeightList) {
+export function shuffleArray(sortInProgress, pxHeightList, setPxHeightList, setSorted) {
   if (!sortInProgress) {
+      setSorted(false);
       let shallowCopy = [...pxHeightList];
       for (let i = shallowCopy.length - 1; i >= 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));

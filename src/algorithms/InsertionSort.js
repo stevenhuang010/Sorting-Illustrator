@@ -1,4 +1,4 @@
-export function insertionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus) {
+export function insertionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted) {
     if (!sortInProgress) {
         setSortInProgress(true);
         timeouts.length = 0;
@@ -16,6 +16,7 @@ export function insertionSort(timeouts, sortInProgress, setSortInProgress, pxHei
             delayMultiplier += 1;   
 
         }
+        setSorted(true);
         finishSortStatus(delayMultiplier, 50);
     }
 }

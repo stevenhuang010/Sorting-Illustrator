@@ -1,10 +1,11 @@
-export function mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus) {
+export function mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted) {
     if (!sortInProgress) {
         setSortInProgress(true);
         timeouts.length = 0;
         let delayMultiplier = 1;
         let shallowCopy = [...pxHeightList];
         mergeSortHelper(0, shallowCopy.length - 1);
+        setSorted(true);
         finishSortStatus(delayMultiplier, 10);
         function mergeSortHelper(left, right) {
             if (left < right) {
