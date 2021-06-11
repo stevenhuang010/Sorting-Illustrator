@@ -1,12 +1,13 @@
-export function mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted) {
-    if (!sortInProgress) {
+export function mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) {
+    if (!sortInProgress && !sorted) {
         setSortInProgress(true);
         timeouts.length = 0;
         let delayMultiplier = 1;
         let shallowCopy = [...pxHeightList];
+        const delay = 10;
         mergeSortHelper(0, shallowCopy.length - 1);
         setSorted(true);
-        finishSortStatus(delayMultiplier, 10);
+        finishSortStatus(delayMultiplier, delay);
         function mergeSortHelper(left, right) {
             if (left < right) {
                 let center = Math.floor((left + right) / 2);
@@ -36,7 +37,7 @@ export function mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightL
                     shallowCopy[i] = rightList[0];
                     rightList = rightList.splice(1);
                 }
-                updateView(delayMultiplier, 10, shallowCopy);
+                updateView(delayMultiplier, delay, shallowCopy);
                 delayMultiplier += 1;
             }
         }

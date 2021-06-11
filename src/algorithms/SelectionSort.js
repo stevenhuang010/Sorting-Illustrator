@@ -1,11 +1,12 @@
 import {swapModel} from '../HelperFunctions.js'
 
-export function selectionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted) {
-    if (!sortInProgress) {
+export function selectionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) {
+    if (!sortInProgress && !sorted) {
         setSortInProgress(true);
         timeouts.length = 0;
         let delayMultiplier = 1;
         let shallowCopy = [...pxHeightList];
+        const delay = 100;
         for (let i = 0; i < shallowCopy.length; i++) {
             let currMin = shallowCopy[i];
             let minIndex = i;
@@ -16,12 +17,12 @@ export function selectionSort(timeouts, sortInProgress, setSortInProgress, pxHei
                 }
             }
             swapModel(i, minIndex, shallowCopy);
-            updateView(delayMultiplier, 100, shallowCopy);
+            updateView(delayMultiplier, delay, shallowCopy);
             delayMultiplier += 1;
 
             
         }
         setSorted(true);
-        finishSortStatus(delayMultiplier, 100);
+        finishSortStatus(delayMultiplier, delay);
     }
 }

@@ -1,14 +1,15 @@
 import { swapModel } from "../HelperFunctions";
 
-export function quickSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted) {
-    if (!sortInProgress) {
+export function quickSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) {
+    if (!sortInProgress && !sorted) {
         setSortInProgress(true);
         timeouts.length = 0;
         let delayMultiplier = 1;
         let shallowCopy = [...pxHeightList];
+        const delay = 20;
         quickSortHelper(0, shallowCopy.length - 1);
         setSorted(true);
-        finishSortStatus(delayMultiplier, 10);
+        finishSortStatus(delayMultiplier, delay);
         function quickSortHelper(left, right) {
             if (left < right) {
                 let partition_index = partition(left, right);
@@ -24,13 +25,13 @@ export function quickSort(timeouts, sortInProgress, setSortInProgress, pxHeightL
                 if (shallowCopy[j] <= pivot) {
                     startIndex++;
                     swapModel(startIndex, j, shallowCopy);
-                    updateView(delayMultiplier, 10, shallowCopy);
+                    updateView(delayMultiplier, delay, shallowCopy);
                     delayMultiplier += 1;
                 }
             }
             startIndex++;
             swapModel(startIndex, right, shallowCopy);
-            updateView(delayMultiplier, 10, shallowCopy);
+            updateView(delayMultiplier, delay, shallowCopy);
             delayMultiplier += 1;
             return startIndex;
         }

@@ -8,6 +8,7 @@ import {selectionSort} from '../algorithms/SelectionSort.js'
 import {mergeSort} from '../algorithms/MergeSort.js'
 import {quickSort} from '../algorithms/QuickSort.js'
 import {heapSort} from '../algorithms/HeapSort.js'
+import {countingSort} from '../algorithms/CountingSort.js'
 
 let timeouts = [];
 const ControlPanel = ({pxHeightList, setPxHeightList}) => {
@@ -31,27 +32,31 @@ const ControlPanel = ({pxHeightList, setPxHeightList}) => {
     }
 
     const bubbleSortAnon = () => {
-        bubbleSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
+        bubbleSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
     }
 
     const insertionSortAnon = () => {
-        insertionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
+        insertionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
     }
 
     const selectionSortAnon = () => {
-        selectionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
+        selectionSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
     }
 
     const mergeSortAnon = () => {
-        mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
+        mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
     }
 
     const quickSortAnon = () => {
-        quickSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
+        quickSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
     }
 
     const heapSortAnon = () => {
-        heapSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted);
+        heapSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
+    }
+
+    const countingSortAnon = () => {
+        countingSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
     }
 
     const endAnimation = () => {
@@ -79,6 +84,7 @@ const ControlPanel = ({pxHeightList, setPxHeightList}) => {
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {mergeSortAnon} text = "Merge Sort" />
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {quickSortAnon} text = "Quick Sort" /> 
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {heapSortAnon} text = "Heap Sort" /> 
+                <Button clickable = {!sortInProgress && !sorted} clickFunction = {countingSortAnon} text = "Counting Sort" /> 
             </div>
         </div>
     )
