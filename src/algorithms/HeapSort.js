@@ -1,3 +1,44 @@
-export function heapSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted) {
+import { swapModel } from "../HelperFunctions";
 
+export function heapSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, setSorted) {
+    if (!sortInProgress) {
+        setSortInProgress(true);
+        timeouts.length = 0;
+        let delayMultiplier = 1;
+        let shallowCopy = [...pxHeightList];
+        heapSortHelper(shallowCopy.length);
+        setSorted(true);
+        finishSortStatus(delayMultiplier, 20);
+        function heapSortHelper(length) {
+            for (let i = Math.floor(length / 2 - 1); i >= 0; i--) {
+                buildMaxHeap(i, length);
+                updateView(delayMultiplier, 20, shallowCopy);
+                delayMultiplier += 1;
+            }
+            for (let i = length - 1; i > 0; i--) {
+                swapModel(0, i, shallowCopy);
+                updateView(delayMultiplier, 20, shallowCopy);
+                delayMultiplier += 1;
+                buildMaxHeap(0, i);
+            }
+        }
+
+        function buildMaxHeap(rootIndex, length) {
+            let largestIndex = rootIndex;
+            let rightChildIndex = rootIndex * 2 + 2;
+            let leftChildIndex = rootIndex * 2 + 1;
+            if (leftChildIndex < length && shallowCopy[leftChildIndex] > shallowCopy[largestIndex]) {
+                largestIndex = leftChildIndex;
+            }
+            if (rightChildIndex < length && shallowCopy[rightChildIndex] > shallowCopy[largestIndex]) {
+                largestIndex = rightChildIndex;
+            }
+            if (largestIndex != rootIndex) {
+                swapModel(largestIndex, rootIndex, shallowCopy);
+                updateView(delayMultiplier, 20, shallowCopy);
+                delayMultiplier += 1;
+                buildMaxHeap(largestIndex, length);
+            }
+        }
+    }
 }
