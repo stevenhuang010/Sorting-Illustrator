@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sorting_illustrator/static/css/main.61550cde.chunk.css",
+    "main.js": "/sorting_illustrator/static/js/main.8100aeac.chunk.js",
+    "main.js.map": "/sorting_illustrator/static/js/main.8100aeac.chunk.js.map",
+    "runtime-main.js": "/sorting_illustrator/static/js/runtime-main.54c6e18d.js",
+    "runtime-main.js.map": "/sorting_illustrator/static/js/runtime-main.54c6e18d.js.map",
+    "static/js/2.c6166110.chunk.js": "/sorting_illustrator/static/js/2.c6166110.chunk.js",
+    "static/js/2.c6166110.chunk.js.map": "/sorting_illustrator/static/js/2.c6166110.chunk.js.map",
+    "static/js/3.5a7492aa.chunk.js": "/sorting_illustrator/static/js/3.5a7492aa.chunk.js",
+    "static/js/3.5a7492aa.chunk.js.map": "/sorting_illustrator/static/js/3.5a7492aa.chunk.js.map",
+    "index.html": "/sorting_illustrator/index.html",
+    "static/css/main.61550cde.chunk.css.map": "/sorting_illustrator/static/css/main.61550cde.chunk.css.map",
+    "static/js/2.c6166110.chunk.js.LICENSE.txt": "/sorting_illustrator/static/js/2.c6166110.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54c6e18d.js",
+    "static/js/2.c6166110.chunk.js",
+    "static/css/main.61550cde.chunk.css",
+    "static/js/main.8100aeac.chunk.js"
+  ]
+}
