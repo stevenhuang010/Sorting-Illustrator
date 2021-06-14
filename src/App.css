@@ -22,7 +22,7 @@ h1 {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background: linear-gradient(#e66465, #9198e5);
   margin-left: 5%;
@@ -92,10 +92,94 @@ button {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
   padding-top: 10px;
 }
 
 input {
   width: 78%;
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 1;
+  outline: none;
+  background: white;
+  border-radius: 10px;
+  height: 6px;
+}
+
+input::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  background: black;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 10px;
+  color: white;
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1200px) {
+  button {
+    width: 45%;
+  }
+
+  input {
+    width: 90%;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 44px;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  button {
+    width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    font-size: 14px;
+  }
+
+  #buttonControls {
+    height: 70%;
+  }
+
+  .bar {
+    width: 2px;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  #controlPanel {
+    margin-left: 30px;
+  }
+  
+  h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .barContainer {
+    width: 50%;
+  }
 }
