@@ -5,11 +5,12 @@ import {useState} from 'react'
 import {generateHeights} from './HelperFunctions.js'
 
 function App() {
-  const [pxHeightList, setPxHeightList] = useState(generateHeights());
-
+  const [numBars, setNumBars] = useState(55);
+  const [pxHeightList, setPxHeightList] = useState(generateHeights(numBars));
+  
   return (
     <div className = "App">
-      <ControlPanel pxHeightList = {pxHeightList} setPxHeightList = {setPxHeightList}/>
+      <ControlPanel pxHeightList = {pxHeightList} setPxHeightList = {setPxHeightList} numBars = {numBars} setNumBars = {setNumBars}/>
       <Histogram pxHeightList = {pxHeightList} />
     </div>
   );

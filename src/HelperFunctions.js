@@ -1,6 +1,8 @@
-export function generateHeights() {
-    const numBars = 60;
-    const heightMultiplyFactor = 10;
+export let timeouts = [];
+
+export function generateHeights(numBars) {
+    let windowHeight = 0.8 * window.innerHeight;
+    const heightMultiplyFactor = Math.floor(windowHeight / numBars);
     let heightList = []
     for (let i = 1; i <= numBars; i++) {
       heightList.push(i * heightMultiplyFactor);

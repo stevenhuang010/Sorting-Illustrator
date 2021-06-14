@@ -15,6 +15,7 @@ export function countingSort(timeouts, sortInProgress, setSortInProgress, pxHeig
         sortHeightList();
         setSorted(true);
         finishSortStatus(delayMultiplier, delay);
+        console.log(shallowCopy);
         function sortHeightList() {
             let previousIndex = 0;
             for (let i = 0; i < rangeArray.length; i++) {

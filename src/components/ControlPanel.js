@@ -1,17 +1,19 @@
 import React from 'react'
 import Button from './Button.js'
+import Slider from  './Slider.js'
 import {useState} from 'react'
-import {generateHeights, shuffleArray, updateView, finishSortStatus} from '../HelperFunctions.js'
+import {generateHeights, shuffleArray} from '../HelperFunctions.js'
 import {bubbleSort} from '../algorithms/BubbleSort.js'
 import {insertionSort} from '../algorithms/InsertionSort.js'
 import {selectionSort} from '../algorithms/SelectionSort.js'
 import {mergeSort} from '../algorithms/MergeSort.js'
 import {quickSort} from '../algorithms/QuickSort.js'
 import {heapSort} from '../algorithms/HeapSort.js'
+import {shellSort} from '../algorithms/ShellSort.js'
 import {countingSort} from '../algorithms/CountingSort.js'
+import {timeouts} from '../HelperFunctions.js'
 
-let timeouts = [];
-const ControlPanel = ({pxHeightList, setPxHeightList}) => {
+const ControlPanel = ({pxHeightList, setPxHeightList, numBars, setNumBars}) => {
     const [sortInProgress, setSortInProgress] = useState(false);
     const [sorted, setSorted] = useState(true);
 
@@ -55,8 +57,18 @@ const ControlPanel = ({pxHeightList, setPxHeightList}) => {
         heapSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
     }
 
+    const shellSortAnon = () => {
+        shellSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
+    }
+
     const countingSortAnon = () => {
         countingSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted);
+    }
+
+    const changeNumBars = (event) => {
+        setNumBars(parseInt(event.target.value));
+        setPxHeightList(generateHeights(event.target.value));
+        setSorted(true);
     }
 
     const endAnimation = () => {
@@ -65,8 +77,7 @@ const ControlPanel = ({pxHeightList, setPxHeightList}) => {
                 clearTimeout(timeouts[i]);
             }
             timeouts.length = 0;
-            //update view
-            updateView(0, 0, generateHeights());
+            updateView(0, 0, generateHeights(numBars));
             setSortInProgress(false);
             setSorted(true);
         }
@@ -78,12 +89,14 @@ const ControlPanel = ({pxHeightList, setPxHeightList}) => {
             <div id = "buttonControls">
                 <Button clickable = {!sortInProgress} clickFunction = {shuffleAnon} text = "Shuffle"/>
                 <Button clickable = {sortInProgress} clickFunction = {endAnimation} text = "End Animation" />
+                <Slider changeable = {!sortInProgress} label = "Number of Bars" min = {10} max = {100} stateVariable = {numBars} alterState = {changeNumBars}/>
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {bubbleSortAnon} text = "Bubble Sort" />
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {insertionSortAnon} text = "Insertion Sort" />
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {selectionSortAnon} text = "Selection Sort" />
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {mergeSortAnon} text = "Merge Sort" />
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {quickSortAnon} text = "Quick Sort" /> 
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {heapSortAnon} text = "Heap Sort" /> 
+                <Button clickable = {!sortInProgress && !sorted} clickFunction = {shellSortAnon} text = "Shell Sort" /> 
                 <Button clickable = {!sortInProgress && !sorted} clickFunction = {countingSortAnon} text = "Counting Sort" /> 
             </div>
         </div>

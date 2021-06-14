@@ -34,7 +34,7 @@ export function heapSort(timeouts, sortInProgress, setSortInProgress, pxHeightLi
             if (rightChildIndex < length && shallowCopy[rightChildIndex] > shallowCopy[largestIndex]) {
                 largestIndex = rightChildIndex;
             }
-            if (largestIndex != rootIndex) {
+            if (largestIndex !== rootIndex) {
                 swapModel(largestIndex, rootIndex, shallowCopy);
                 buildMaxHeap(largestIndex, length);
             }
