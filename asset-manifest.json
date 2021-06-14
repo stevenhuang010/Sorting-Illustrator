@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/sorting_illustrator/static/css/main.61550cde.chunk.css",
-    "main.js": "/sorting_illustrator/static/js/main.8100aeac.chunk.js",
-    "main.js.map": "/sorting_illustrator/static/js/main.8100aeac.chunk.js.map",
-    "runtime-main.js": "/sorting_illustrator/static/js/runtime-main.54c6e18d.js",
-    "runtime-main.js.map": "/sorting_illustrator/static/js/runtime-main.54c6e18d.js.map",
-    "static/js/2.c6166110.chunk.js": "/sorting_illustrator/static/js/2.c6166110.chunk.js",
-    "static/js/2.c6166110.chunk.js.map": "/sorting_illustrator/static/js/2.c6166110.chunk.js.map",
-    "static/js/3.5a7492aa.chunk.js": "/sorting_illustrator/static/js/3.5a7492aa.chunk.js",
-    "static/js/3.5a7492aa.chunk.js.map": "/sorting_illustrator/static/js/3.5a7492aa.chunk.js.map",
-    "index.html": "/sorting_illustrator/index.html",
-    "static/css/main.61550cde.chunk.css.map": "/sorting_illustrator/static/css/main.61550cde.chunk.css.map",
-    "static/js/2.c6166110.chunk.js.LICENSE.txt": "/sorting_illustrator/static/js/2.c6166110.chunk.js.LICENSE.txt"
+    "main.css": "/Sorting-Illustrator/static/css/main.61550cde.chunk.css",
+    "main.js": "/Sorting-Illustrator/static/js/main.8100aeac.chunk.js",
+    "main.js.map": "/Sorting-Illustrator/static/js/main.8100aeac.chunk.js.map",
+    "runtime-main.js": "/Sorting-Illustrator/static/js/runtime-main.e5a158da.js",
+    "runtime-main.js.map": "/Sorting-Illustrator/static/js/runtime-main.e5a158da.js.map",
+    "static/js/2.c6166110.chunk.js": "/Sorting-Illustrator/static/js/2.c6166110.chunk.js",
+    "static/js/2.c6166110.chunk.js.map": "/Sorting-Illustrator/static/js/2.c6166110.chunk.js.map",
+    "static/js/3.5a7492aa.chunk.js": "/Sorting-Illustrator/static/js/3.5a7492aa.chunk.js",
+    "static/js/3.5a7492aa.chunk.js.map": "/Sorting-Illustrator/static/js/3.5a7492aa.chunk.js.map",
+    "index.html": "/Sorting-Illustrator/index.html",
+    "static/css/main.61550cde.chunk.css.map": "/Sorting-Illustrator/static/css/main.61550cde.chunk.css.map",
+    "static/js/2.c6166110.chunk.js.LICENSE.txt": "/Sorting-Illustrator/static/js/2.c6166110.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.54c6e18d.js",
+    "static/js/runtime-main.e5a158da.js",
     "static/js/2.c6166110.chunk.js",
     "static/css/main.61550cde.chunk.css",
     "static/js/main.8100aeac.chunk.js"
