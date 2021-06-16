@@ -16,6 +16,16 @@ import {timeouts} from '../HelperFunctions.js'
 const ControlPanel = ({pxHeightList, setPxHeightList, numBars, setNumBars}) => {
     const [sortInProgress, setSortInProgress] = useState(false);
     const [sorted, setSorted] = useState(true);
+    const algorithmDictionary = {
+        "Bubble Sort" : bubbleSort,
+        "Insertion Sort" : insertionSort,
+        "Selection Sort" : selectionSort,
+        "Merge Sort" : mergeSort,
+        "Quick Sort" : quickSort,
+        "Heap Sort" : heapSort,
+        "Shell Sort" : shellSort,
+        "Counting Sort" : countingSort
+    }
     
     const updateView = (delayMultiplier, inherentDelayFactor, array) => {
         timeouts.push(setTimeout((array) => {
@@ -27,17 +37,6 @@ const ControlPanel = ({pxHeightList, setPxHeightList, numBars, setNumBars}) => {
         timeouts.push(setTimeout(() => {
             setSortInProgress(false);
         }, inherentDelayFactor * delayMultiplier));
-    }
-
-    const algorithmDictionary = {
-        "Bubble Sort" : bubbleSort,
-        "Insertion Sort" : insertionSort,
-        "Selection Sort" : selectionSort,
-        "Merge Sort" : mergeSort,
-        "Quick Sort" : quickSort,
-        "Heap Sort" : heapSort,
-        "Shell Sort" : shellSort,
-        "Counting Sort" : countingSort
     }
 
     const sortingAlgorithm = (name) => {
