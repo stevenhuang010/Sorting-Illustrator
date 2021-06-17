@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/Sorting-Illustrator/static/css/main.7b701771.chunk.css",
-    "main.js": "/Sorting-Illustrator/static/js/main.7899b58c.chunk.js",
-    "main.js.map": "/Sorting-Illustrator/static/js/main.7899b58c.chunk.js.map",
-    "runtime-main.js": "/Sorting-Illustrator/static/js/runtime-main.e5a158da.js",
-    "runtime-main.js.map": "/Sorting-Illustrator/static/js/runtime-main.e5a158da.js.map",
-    "static/js/2.c6166110.chunk.js": "/Sorting-Illustrator/static/js/2.c6166110.chunk.js",
-    "static/js/2.c6166110.chunk.js.map": "/Sorting-Illustrator/static/js/2.c6166110.chunk.js.map",
-    "static/js/3.5a7492aa.chunk.js": "/Sorting-Illustrator/static/js/3.5a7492aa.chunk.js",
-    "static/js/3.5a7492aa.chunk.js.map": "/Sorting-Illustrator/static/js/3.5a7492aa.chunk.js.map",
+    "main.css": "/Sorting-Illustrator/static/css/main.9a375ce2.chunk.css",
+    "main.js": "/Sorting-Illustrator/static/js/main.e226136b.chunk.js",
+    "main.js.map": "/Sorting-Illustrator/static/js/main.e226136b.chunk.js.map",
+    "runtime-main.js": "/Sorting-Illustrator/static/js/runtime-main.9f523b1e.js",
+    "runtime-main.js.map": "/Sorting-Illustrator/static/js/runtime-main.9f523b1e.js.map",
+    "static/js/2.74a8f6d3.chunk.js": "/Sorting-Illustrator/static/js/2.74a8f6d3.chunk.js",
+    "static/js/2.74a8f6d3.chunk.js.map": "/Sorting-Illustrator/static/js/2.74a8f6d3.chunk.js.map",
     "index.html": "/Sorting-Illustrator/index.html",
-    "static/css/main.7b701771.chunk.css.map": "/Sorting-Illustrator/static/css/main.7b701771.chunk.css.map",
-    "static/js/2.c6166110.chunk.js.LICENSE.txt": "/Sorting-Illustrator/static/js/2.c6166110.chunk.js.LICENSE.txt"
+    "static/css/main.9a375ce2.chunk.css.map": "/Sorting-Illustrator/static/css/main.9a375ce2.chunk.css.map",
+    "static/js/2.74a8f6d3.chunk.js.LICENSE.txt": "/Sorting-Illustrator/static/js/2.74a8f6d3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e5a158da.js",
-    "static/js/2.c6166110.chunk.js",
-    "static/css/main.7b701771.chunk.css",
-    "static/js/main.7899b58c.chunk.js"
+    "static/js/runtime-main.9f523b1e.js",
+    "static/js/2.74a8f6d3.chunk.js",
+    "static/css/main.9a375ce2.chunk.css",
+    "static/js/main.e226136b.chunk.js"
   ]
 }
