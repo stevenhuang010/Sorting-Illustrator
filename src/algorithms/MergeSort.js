@@ -1,4 +1,4 @@
-export function mergeSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) {
+export const mergeSort = (timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) => {
     if (!sortInProgress && !sorted) {
         setSortInProgress(true);
         timeouts.length = 0;

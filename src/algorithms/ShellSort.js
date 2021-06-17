@@ -1,4 +1,4 @@
-export function shellSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) {
+export const shellSort = (timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) => {
     if (!sortInProgress && !sorted) {
         setSortInProgress(true);
         timeouts.length = 0;

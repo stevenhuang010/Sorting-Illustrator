@@ -1,4 +1,4 @@
-export function countingSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) {
+export const countingSort = (timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) => {
     if (!sortInProgress && !sorted) {
         setSortInProgress(true);
         timeouts.length = 0;

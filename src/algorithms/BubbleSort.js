@@ -1,6 +1,6 @@
 import {swapModel} from '../HelperFunctions.js'
 
-export function bubbleSort(timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) {
+export const bubbleSort = (timeouts, sortInProgress, setSortInProgress, pxHeightList, updateView, finishSortStatus, sorted, setSorted) => {
     if (!sortInProgress && !sorted) {
         setSortInProgress(true);
         timeouts.length = 0;

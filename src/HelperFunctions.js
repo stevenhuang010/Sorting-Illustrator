@@ -1,6 +1,6 @@
 export let timeouts = [];
 
-export function generateHeights(numBars) {
+export const generateHeights = (numBars) => {
     let windowHeight = 0.8 * window.innerHeight;
     const heightMultiplyFactor = Math.floor(windowHeight / numBars);
     let heightList = []
@@ -10,11 +10,11 @@ export function generateHeights(numBars) {
     return heightList;
 }
 
-export function swapModel(i, j, array) {
+export const swapModel = (i, j, array) => {
   [array[i], array[j]] = [array[j], array[i]];
 }
 
-export function shuffleArray(sortInProgress, pxHeightList, setPxHeightList, setSorted) {
+export const shuffleArray = (sortInProgress, pxHeightList, setPxHeightList, setSorted) => {
   if (!sortInProgress) {
       setSorted(false);
       let shallowCopy = [...pxHeightList];
